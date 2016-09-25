@@ -13,6 +13,7 @@
 		D3AF81241D97E74800A43ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3AF81221D97E74800A43ACD /* Main.storyboard */; };
 		D3AF81261D97E74800A43ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3AF81251D97E74800A43ACD /* Assets.xcassets */; };
 		D3AF81291D97E74800A43ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3AF81271D97E74800A43ACD /* LaunchScreen.storyboard */; };
+		D3AF81311D97E80600A43ACD /* MasMovilApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF81301D97E80600A43ACD /* MasMovilApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		D3AF81251D97E74800A43ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3AF81281D97E74800A43ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3AF812A1D97E74800A43ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3AF81301D97E80600A43ACD /* MasMovilApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasMovilApi.swift; sourceTree = "<group>"; };
+		D3AF81321D97F4E900A43ACD /* MasMovilUsage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MasMovilUsage.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 		D3AF811B1D97E74800A43ACD /* MasMovilUsage */ = {
 			isa = PBXGroup;
 			children = (
+				D3AF81321D97F4E900A43ACD /* MasMovilUsage.entitlements */,
 				D3AF811C1D97E74800A43ACD /* AppDelegate.swift */,
 				D3AF811E1D97E74800A43ACD /* FirstViewController.swift */,
 				D3AF81201D97E74800A43ACD /* SecondViewController.swift */,
@@ -63,6 +67,7 @@
 				D3AF81251D97E74800A43ACD /* Assets.xcassets */,
 				D3AF81271D97E74800A43ACD /* LaunchScreen.storyboard */,
 				D3AF812A1D97E74800A43ACD /* Info.plist */,
+				D3AF81301D97E80600A43ACD /* MasMovilApi.swift */,
 			);
 			path = MasMovilUsage;
 			sourceTree = "<group>";
@@ -99,7 +104,13 @@
 				TargetAttributes = {
 					D3AF81181D97E74800A43ACD = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HG5KUP66BT;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -141,6 +152,7 @@
 			files = (
 				D3AF81211D97E74800A43ACD /* SecondViewController.swift in Sources */,
 				D3AF811D1D97E74800A43ACD /* AppDelegate.swift in Sources */,
+				D3AF81311D97E80600A43ACD /* MasMovilApi.swift in Sources */,
 				D3AF811F1D97E74800A43ACD /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +276,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MasMovilUsage/MasMovilUsage.entitlements;
+				DEVELOPMENT_TEAM = HG5KUP66BT;
 				INFOPLIST_FILE = MasMovilUsage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = segura.MasMovilUsage;
@@ -276,6 +290,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MasMovilUsage/MasMovilUsage.entitlements;
+				DEVELOPMENT_TEAM = HG5KUP66BT;
 				INFOPLIST_FILE = MasMovilUsage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = segura.MasMovilUsage;
