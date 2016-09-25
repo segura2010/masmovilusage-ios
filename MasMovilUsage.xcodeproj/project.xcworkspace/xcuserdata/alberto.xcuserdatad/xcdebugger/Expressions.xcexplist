@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MasMovilApi.(validateToken(String, onCompletion : (NSError?, [String : AnyObject]?) -&gt; ()) -&gt; ()).(closure #1):MasMovilApi.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(HTTPURLResponse)res">
+            </PersistentString>
+            <PersistentString
+               value = "(_CFURLResponse *)res._internal-&gt;response">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

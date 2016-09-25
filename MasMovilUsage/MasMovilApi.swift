@@ -121,7 +121,8 @@ class MasMovilApi {
     {
         let finalUrl = "\(VALIDATE_TOKEN_URL)\(token)"
         var request = URLRequest(url: URL(string: finalUrl)!)
-        let session = URLSession.shared
+        let noRedirects = URLSessionNoRedirects()
+        let session = URLSession(configuration: .ephemeral, delegate: noRedirects, delegateQueue: .main) // To stop redirects!!
         request.httpMethod = "GET"
         
         do {
@@ -134,7 +135,7 @@ class MasMovilApi {
                     let res = response as! HTTPURLResponse
                     //print(res)
                     
-                    if res.statusCode == 200{
+                    if res.statusCode == 200 || res.statusCode == 302{
                         onCompletion(nil, nil)
                     }else{
                         onCompletion(NSError(domain: "get", code: 999, userInfo: nil), nil)
@@ -152,7 +153,7 @@ class MasMovilApi {
             return
         }
     }
-
+    
     
     func getConsumeResume(_ startTimeStamp:String, onCompletion:@escaping ServiceResponse)
     {
@@ -245,6 +246,20 @@ class MasMovilApi {
         defaults?.setValue(token, forKey: "token")
         
         defaults?.synchronize()
+    }
+    
+}
+
+
+class URLSessionNoRedirects: NSObject, URLSessionDelegate, URLSessionTaskDelegate{
+    
+    // Handles redirection
+    func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest, completionHandler: @escaping (URLRequest?) -> Void) {
+        
+        print("noRedirects called!")
+        // Stops the redirection, and returns (internally) the response body.
+        completionHandler(nil)
+    
     }
     
 }

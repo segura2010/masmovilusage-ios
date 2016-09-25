@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30D31341D982BC3000F697E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30D31331D982BC3000F697E /* NotificationCenter.framework */; };
+		D30D31371D982BC3000F697E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D31361D982BC3000F697E /* TodayViewController.swift */; };
+		D30D313A1D982BC3000F697E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D30D31381D982BC3000F697E /* MainInterface.storyboard */; };
+		D30D313E1D982BC3000F697E /* MasMovilUsageWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D30D31311D982BC3000F697E /* MasMovilUsageWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D30D31441D982CEF000F697E /* MasMovilApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF81301D97E80600A43ACD /* MasMovilApi.swift */; };
 		D3AF811D1D97E74800A43ACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF811C1D97E74800A43ACD /* AppDelegate.swift */; };
 		D3AF811F1D97E74800A43ACD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF811E1D97E74800A43ACD /* FirstViewController.swift */; };
 		D3AF81211D97E74800A43ACD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF81201D97E74800A43ACD /* SecondViewController.swift */; };
@@ -16,7 +21,37 @@
 		D3AF81311D97E80600A43ACD /* MasMovilApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF81301D97E80600A43ACD /* MasMovilApi.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D30D313C1D982BC3000F697E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3AF81111D97E74800A43ACD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D30D31301D982BC3000F697E;
+			remoteInfo = MasMovilUsageWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D30D31421D982BC3000F697E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D30D313E1D982BC3000F697E /* MasMovilUsageWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D30D31311D982BC3000F697E /* MasMovilUsageWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MasMovilUsageWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D30D31331D982BC3000F697E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		D30D31361D982BC3000F697E /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		D30D31391D982BC3000F697E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D30D313B1D982BC3000F697E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D30D31431D982BD7000F697E /* MasMovilUsageWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MasMovilUsageWidget.entitlements; sourceTree = "<group>"; };
 		D3AF81191D97E74800A43ACD /* MasMovilUsage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasMovilUsage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3AF811C1D97E74800A43ACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3AF811E1D97E74800A43ACD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +65,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D30D312E1D982BC3000F697E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D30D31341D982BC3000F697E /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3AF81161D97E74800A43ACD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,10 +83,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D30D31321D982BC3000F697E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D30D31331D982BC3000F697E /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D30D31351D982BC3000F697E /* MasMovilUsageWidget */ = {
+			isa = PBXGroup;
+			children = (
+				D30D31431D982BD7000F697E /* MasMovilUsageWidget.entitlements */,
+				D30D31361D982BC3000F697E /* TodayViewController.swift */,
+				D30D31381D982BC3000F697E /* MainInterface.storyboard */,
+				D30D313B1D982BC3000F697E /* Info.plist */,
+			);
+			path = MasMovilUsageWidget;
+			sourceTree = "<group>";
+		};
 		D3AF81101D97E74800A43ACD = {
 			isa = PBXGroup;
 			children = (
 				D3AF811B1D97E74800A43ACD /* MasMovilUsage */,
+				D30D31351D982BC3000F697E /* MasMovilUsageWidget */,
+				D30D31321D982BC3000F697E /* Frameworks */,
 				D3AF811A1D97E74800A43ACD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				D3AF81191D97E74800A43ACD /* MasMovilUsage.app */,
+				D30D31311D982BC3000F697E /* MasMovilUsageWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,6 +140,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D30D31301D982BC3000F697E /* MasMovilUsageWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D30D31411D982BC3000F697E /* Build configuration list for PBXNativeTarget "MasMovilUsageWidget" */;
+			buildPhases = (
+				D30D312D1D982BC3000F697E /* Sources */,
+				D30D312E1D982BC3000F697E /* Frameworks */,
+				D30D312F1D982BC3000F697E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MasMovilUsageWidget;
+			productName = MasMovilUsageWidget;
+			productReference = D30D31311D982BC3000F697E /* MasMovilUsageWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D3AF81181D97E74800A43ACD /* MasMovilUsage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3AF812D1D97E74800A43ACD /* Build configuration list for PBXNativeTarget "MasMovilUsage" */;
@@ -82,10 +164,12 @@
 				D3AF81151D97E74800A43ACD /* Sources */,
 				D3AF81161D97E74800A43ACD /* Frameworks */,
 				D3AF81171D97E74800A43ACD /* Resources */,
+				D30D31421D982BC3000F697E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D30D313D1D982BC3000F697E /* PBXTargetDependency */,
 			);
 			name = MasMovilUsage;
 			productName = MasMovilUsage;
@@ -102,6 +186,16 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Alberto;
 				TargetAttributes = {
+					D30D31301D982BC3000F697E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HG5KUP66BT;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					D3AF81181D97E74800A43ACD = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = HG5KUP66BT;
@@ -128,11 +222,20 @@
 			projectRoot = "";
 			targets = (
 				D3AF81181D97E74800A43ACD /* MasMovilUsage */,
+				D30D31301D982BC3000F697E /* MasMovilUsageWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D30D312F1D982BC3000F697E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D30D313A1D982BC3000F697E /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3AF81171D97E74800A43ACD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,6 +249,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D30D312D1D982BC3000F697E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D30D31441D982CEF000F697E /* MasMovilApi.swift in Sources */,
+				D30D31371D982BC3000F697E /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3AF81151D97E74800A43ACD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -159,7 +271,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D30D313D1D982BC3000F697E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D30D31301D982BC3000F697E /* MasMovilUsageWidget */;
+			targetProxy = D30D313C1D982BC3000F697E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		D30D31381D982BC3000F697E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D30D31391D982BC3000F697E /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		D3AF81221D97E74800A43ACD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -179,6 +307,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D30D313F1D982BC3000F697E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MasMovilUsageWidget/MasMovilUsageWidget.entitlements;
+				DEVELOPMENT_TEAM = HG5KUP66BT;
+				INFOPLIST_FILE = MasMovilUsageWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = segura.MasMovilUsage.MasMovilUsageWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D30D31401D982BC3000F697E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MasMovilUsageWidget/MasMovilUsageWidget.entitlements;
+				DEVELOPMENT_TEAM = HG5KUP66BT;
+				INFOPLIST_FILE = MasMovilUsageWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = segura.MasMovilUsage.MasMovilUsageWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		D3AF812B1D97E74800A43ACD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -275,6 +431,7 @@
 		D3AF812E1D97E74800A43ACD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MasMovilUsage/MasMovilUsage.entitlements;
 				DEVELOPMENT_TEAM = HG5KUP66BT;
@@ -289,6 +446,7 @@
 		D3AF812F1D97E74800A43ACD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MasMovilUsage/MasMovilUsage.entitlements;
 				DEVELOPMENT_TEAM = HG5KUP66BT;
@@ -303,6 +461,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D30D31411D982BC3000F697E /* Build configuration list for PBXNativeTarget "MasMovilUsageWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D30D313F1D982BC3000F697E /* Debug */,
+				D30D31401D982BC3000F697E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D3AF81141D97E74800A43ACD /* Build configuration list for PBXProject "MasMovilUsage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -319,6 +485,7 @@
 				D3AF812F1D97E74800A43ACD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
