@@ -122,7 +122,7 @@ class MasMovilApi {
         let finalUrl = "\(VALIDATE_TOKEN_URL)\(token)"
         var request = URLRequest(url: URL(string: finalUrl)!)
         let noRedirects = URLSessionNoRedirects()
-        let session = URLSession(configuration: .ephemeral, delegate: noRedirects, delegateQueue: .main) // To stop redirects!!
+        let session = URLSession.shared //URLSession(configuration: .ephemeral, delegate: noRedirects, delegateQueue: .main) // To stop redirects!!
         request.httpMethod = "GET"
         
         do {
