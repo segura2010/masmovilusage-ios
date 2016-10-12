@@ -197,7 +197,7 @@ class MasMovilApi {
         let someDateTime = formatter.date(from: "\(year!)/\(month!)/01 00:01")
         
         
-        return "\(someDateTime!.timeIntervalSince1970)"
+        return "\(Int(someDateTime!.timeIntervalSince1970))"
     }
     
 }

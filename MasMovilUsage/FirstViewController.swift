@@ -14,6 +14,7 @@ class FirstViewController: UIViewController {
     @IBOutlet var voiceUsage: UILabel!
     @IBOutlet var totalUsage: UILabel!
     
+    @IBOutlet var circularProgressBar: MBCircularProgressBarView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,8 @@ class FirstViewController: UIViewController {
                     self.dataUsage.text = "\(receivedData["data"]!) MB"
                     self.voiceUsage.text = "\(receivedData["voice"]!) Minutos"
                     self.totalUsage.text = "\(receivedData["consume"]!) €"
+                    
+                    //self.circularProgressBar.setValue(CGFloat(Float(receivedData["consume"] as! String)!), animateWithDuration: 1.0)
                 })
             }
             

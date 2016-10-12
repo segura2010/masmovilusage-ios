@@ -12,6 +12,8 @@
 		D30D313A1D982BC3000F697E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D30D31381D982BC3000F697E /* MainInterface.storyboard */; };
 		D30D313E1D982BC3000F697E /* MasMovilUsageWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D30D31311D982BC3000F697E /* MasMovilUsageWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D30D31441D982CEF000F697E /* MasMovilApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF81301D97E80600A43ACD /* MasMovilApi.swift */; };
+		D36865EF1DAEC4B60057B688 /* MBCircularProgressBarLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D36865EC1DAEC4B60057B688 /* MBCircularProgressBarLayer.m */; };
+		D36865F01DAEC4B60057B688 /* MBCircularProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D36865EE1DAEC4B60057B688 /* MBCircularProgressBarView.m */; };
 		D3AF811D1D97E74800A43ACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF811C1D97E74800A43ACD /* AppDelegate.swift */; };
 		D3AF811F1D97E74800A43ACD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF811E1D97E74800A43ACD /* FirstViewController.swift */; };
 		D3AF81211D97E74800A43ACD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF81201D97E74800A43ACD /* SecondViewController.swift */; };
@@ -54,6 +56,10 @@
 		D30D31391D982BC3000F697E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		D30D313B1D982BC3000F697E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D30D31431D982BD7000F697E /* MasMovilUsageWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MasMovilUsageWidget.entitlements; sourceTree = "<group>"; };
+		D36865EB1DAEC4B60057B688 /* MBCircularProgressBarLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBCircularProgressBarLayer.h; path = libs/MBCircularProgressBarLayer.h; sourceTree = "<group>"; };
+		D36865EC1DAEC4B60057B688 /* MBCircularProgressBarLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBCircularProgressBarLayer.m; path = libs/MBCircularProgressBarLayer.m; sourceTree = "<group>"; };
+		D36865ED1DAEC4B60057B688 /* MBCircularProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBCircularProgressBarView.h; path = libs/MBCircularProgressBarView.h; sourceTree = "<group>"; };
+		D36865EE1DAEC4B60057B688 /* MBCircularProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBCircularProgressBarView.m; path = libs/MBCircularProgressBarView.m; sourceTree = "<group>"; };
 		D3AF81191D97E74800A43ACD /* MasMovilUsage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasMovilUsage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3AF811C1D97E74800A43ACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3AF811E1D97E74800A43ACD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -105,9 +111,21 @@
 			path = MasMovilUsageWidget;
 			sourceTree = "<group>";
 		};
+		D36865EA1DAEC4A40057B688 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				D36865EB1DAEC4B60057B688 /* MBCircularProgressBarLayer.h */,
+				D36865EC1DAEC4B60057B688 /* MBCircularProgressBarLayer.m */,
+				D36865ED1DAEC4B60057B688 /* MBCircularProgressBarView.h */,
+				D36865EE1DAEC4B60057B688 /* MBCircularProgressBarView.m */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
 		D3AF81101D97E74800A43ACD = {
 			isa = PBXGroup;
 			children = (
+				D36865EA1DAEC4A40057B688 /* libs */,
 				D3AF811B1D97E74800A43ACD /* MasMovilUsage */,
 				D30D31351D982BC3000F697E /* MasMovilUsageWidget */,
 				D30D31321D982BC3000F697E /* Frameworks */,
@@ -203,6 +221,7 @@
 					D3AF81181D97E74800A43ACD = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = HG5KUP66BT;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -267,10 +286,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D36865F01DAEC4B60057B688 /* MBCircularProgressBarView.m in Sources */,
 				D3AF81211D97E74800A43ACD /* SecondViewController.swift in Sources */,
 				D3AF811D1D97E74800A43ACD /* AppDelegate.swift in Sources */,
 				D3C8D7AC1DAEBC5A0036DEC6 /* LocalStorageManager.swift in Sources */,
 				D3AF81311D97E80600A43ACD /* MasMovilApi.swift in Sources */,
+				D36865EF1DAEC4B60057B688 /* MBCircularProgressBarLayer.m in Sources */,
 				D3AF811F1D97E74800A43ACD /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,12 +460,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MasMovilUsage/MasMovilUsage.entitlements;
 				DEVELOPMENT_TEAM = HG5KUP66BT;
 				INFOPLIST_FILE = MasMovilUsage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = segura.MasMovilUsage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MasMovilUsage-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -454,12 +478,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MasMovilUsage/MasMovilUsage.entitlements;
 				DEVELOPMENT_TEAM = HG5KUP66BT;
 				INFOPLIST_FILE = MasMovilUsage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = segura.MasMovilUsage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MasMovilUsage-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

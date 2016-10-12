@@ -50,6 +50,28 @@ class LocalStorageManager {
         }
     }
     
+    func getDataLimit() -> Int
+    {
+        let defaults = UserDefaults(suiteName: DEFAULTS_NAME)
+        
+        if let d = defaults?.integer(forKey: "datalimit") {
+            return d
+        }
+        else{
+            return 0
+        }
+    }
+    
+    func saveDataLimit(_ data:Int)
+    {
+        
+        let defaults = UserDefaults(suiteName: DEFAULTS_NAME)
+        
+        defaults?.setValue(data, forKey: "datalimit")
+        
+        defaults?.synchronize()
+    }
+    
     func saveUser(_ username:String, password:String, token:String)
     {
         

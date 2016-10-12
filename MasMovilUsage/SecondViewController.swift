@@ -25,6 +25,8 @@ class SecondViewController: UIViewController {
         usernameTxt.text = LocalStorageManager.sharedInstance.getUsername()
         
         passwordTxt.text = LocalStorageManager.sharedInstance.getPassword()
+        
+        dataTxt.text = "\(LocalStorageManager.sharedInstance.getDataLimit())"
     }
     
     func DismissKeyboard(){
@@ -60,6 +62,10 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func saveDataBtnClick(_ sender: AnyObject) {
+        
+        let data = Int(dataTxt.text!)
+        LocalStorageManager.sharedInstance.saveDataLimit(data!)
+        
     }
 }
 

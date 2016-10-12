@@ -92,7 +92,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     self.voiceUsage.text = "\(receivedData["voice"]!)"
                     self.totalUsage.text = "\(receivedData["consume"]!)"
                     
-                    let percent = (receivedData["data"] as! Float) / 1000.0
+                    let dataLimit = LocalStorageManager.sharedInstance.getDataLimit()
+                    
+                    let percent = (receivedData["data"] as! Float) / Float(dataLimit)
                     
                     self.dataBar.setProgress(percent, animated: true)
                     
