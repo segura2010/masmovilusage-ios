@@ -13,6 +13,7 @@ class SecondViewController: UIViewController {
     
     @IBOutlet var usernameTxt: UITextField!
     @IBOutlet var passwordTxt: UITextField!
+    @IBOutlet var dataTxt: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +22,9 @@ class SecondViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SecondViewController.DismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        usernameTxt.text = MasMovilApi.sharedInstance.getUsername()
+        usernameTxt.text = LocalStorageManager.sharedInstance.getUsername()
         
-        passwordTxt.text = MasMovilApi.sharedInstance.getPassword()
+        passwordTxt.text = LocalStorageManager.sharedInstance.getPassword()
     }
     
     func DismissKeyboard(){
@@ -51,11 +52,14 @@ class SecondViewController: UIViewController {
             }
             
             if let token = result?["token"]{
-                MasMovilApi.sharedInstance.saveUser(username, password: password, token:token as! String)
+                LocalStorageManager.sharedInstance.saveUser(username, password: password, token:token as! String)
             }
             
         }
         
+    }
+    
+    @IBAction func saveDataBtnClick(_ sender: AnyObject) {
     }
 }
 

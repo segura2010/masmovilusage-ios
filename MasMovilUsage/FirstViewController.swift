@@ -20,7 +20,7 @@ class FirstViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        let token = MasMovilApi.sharedInstance.getToken()
+        let token = LocalStorageManager.sharedInstance.getToken()
         MasMovilApi.sharedInstance.validateToken(token, onCompletion: { (err, result) in
             
             if((err) != nil)

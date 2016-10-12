@@ -27,7 +27,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         self.indicatorView.hidesWhenStopped = true
         self.indicatorView.startAnimating()
         
-        let token = MasMovilApi.sharedInstance.getToken()
+        let token = LocalStorageManager.sharedInstance.getToken()
         MasMovilApi.sharedInstance.validateToken(token, onCompletion: { (err, result) in
             
             if((err) != nil)

@@ -105,8 +105,8 @@ class MasMovilApi {
     
     func loginWithDefaults(onCompletion:@escaping ServiceResponse)
     {
-        let username = self.getUsername()
-        let password = self.getPassword()
+        let username = LocalStorageManager.sharedInstance.getUsername()
+        let password = LocalStorageManager.sharedInstance.getPassword()
         
         if(username != "" && password != "")
         {
@@ -198,54 +198,6 @@ class MasMovilApi {
         
         
         return "\(someDateTime!.timeIntervalSince1970)"
-    }
-    
-    func getUsername() -> String
-    {
-        let defaults = UserDefaults(suiteName: "group.masmovilusage")
-        
-        if let username = defaults?.string(forKey: "username") {
-            return username
-        }
-        else{
-            return ""
-        }
-    }
-    
-    func getPassword() -> String
-    {
-        let defaults = UserDefaults(suiteName: "group.masmovilusage")
-        
-        if let password = defaults?.string(forKey: "password") {
-            return password
-        }
-        else{
-            return ""
-        }
-    }
-    
-    func getToken() -> String
-    {
-        let defaults = UserDefaults(suiteName: "group.masmovilusage")
-        
-        if let token = defaults?.string(forKey: "token") {
-            return token
-        }
-        else{
-            return ""
-        }
-    }
-    
-    func saveUser(_ username:String, password:String, token:String)
-    {
-        
-        let defaults = UserDefaults(suiteName: "group.masmovilusage")
-        
-        defaults?.setValue(username, forKey: "username")
-        defaults?.setValue(password, forKey: "password")
-        defaults?.setValue(token, forKey: "token")
-        
-        defaults?.synchronize()
     }
     
 }

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -107,6 +108,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dhm-WG-YRf">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nze-7r-5DO">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -117,22 +123,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cantidad Bono de Datos (MB)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rb-k3-CPx">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoX-v4-qiP">
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="loginBtnClick:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="DVa-ki-nZb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaG-Ap-NwT">
+                                <state key="normal" title="Guardar"/>
+                                <connections>
+                                    <action selector="loginBtnClick:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="6iE-Xf-ygT"/>
+                                    <action selector="saveDataBtnClick:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="XVy-uH-tQb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="gaG-Ap-NwT" firstAttribute="top" secondItem="dhm-WG-YRf" secondAttribute="top" id="0Of-z4-zgL"/>
                             <constraint firstItem="kwX-Yc-KaV" firstAttribute="top" secondItem="nze-7r-5DO" secondAttribute="bottom" constant="8" symbolic="YES" id="2W4-c4-xkL"/>
                             <constraint firstItem="kwX-Yc-KaV" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="5Fl-qU-Tqb"/>
                             <constraint firstItem="dLN-c4-FaC" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="-199.5" id="CMn-iS-7kF"/>
+                            <constraint firstItem="dhm-WG-YRf" firstAttribute="top" secondItem="4Rb-k3-CPx" secondAttribute="bottom" constant="8" symbolic="YES" id="Cla-KR-Yfy"/>
+                            <constraint firstItem="4Rb-k3-CPx" firstAttribute="centerX" secondItem="dhm-WG-YRf" secondAttribute="centerX" id="DnU-xO-egZ"/>
+                            <constraint firstItem="dhm-WG-YRf" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="43" id="EWH-n6-3CM"/>
                             <constraint firstItem="kwX-Yc-KaV" firstAttribute="trailing" secondItem="dLN-c4-FaC" secondAttribute="trailing" id="FDe-nF-fey"/>
                             <constraint firstItem="kwX-Yc-KaV" firstAttribute="leading" secondItem="uMv-aZ-c5n" secondAttribute="leading" id="RFE-Ln-5Ad"/>
                             <constraint firstItem="uMv-aZ-c5n" firstAttribute="top" secondItem="kwX-Yc-KaV" secondAttribute="bottom" constant="8" symbolic="YES" id="YKT-UM-MTY"/>
+                            <constraint firstItem="4Rb-k3-CPx" firstAttribute="top" secondItem="LoX-v4-qiP" secondAttribute="bottom" constant="54" id="cST-cu-CG0"/>
+                            <constraint firstItem="4Rb-k3-CPx" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="dWy-AL-q4w"/>
                             <constraint firstItem="nze-7r-5DO" firstAttribute="leading" secondItem="kwX-Yc-KaV" secondAttribute="leading" id="irE-Mn-WSW"/>
+                            <constraint firstItem="gaG-Ap-NwT" firstAttribute="leading" secondItem="dhm-WG-YRf" secondAttribute="trailing" constant="8" symbolic="YES" id="ppX-Yk-nfk"/>
                             <constraint firstItem="dLN-c4-FaC" firstAttribute="top" secondItem="uMv-aZ-c5n" secondAttribute="bottom" constant="3" id="rzK-Fe-Vbt"/>
                             <constraint firstItem="uMv-aZ-c5n" firstAttribute="leading" secondItem="dLN-c4-FaC" secondAttribute="leading" id="tCS-oU-e5W"/>
                             <constraint firstItem="LoX-v4-qiP" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="-161.5" id="uoc-uy-E2A"/>
@@ -141,6 +166,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Ajustes" image="second" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="dataTxt" destination="dhm-WG-YRf" id="nFR-LS-elI"/>
                         <outlet property="passwordTxt" destination="dLN-c4-FaC" id="HeL-71-Yo9"/>
                         <outlet property="usernameTxt" destination="kwX-Yc-KaV" id="sb9-e9-3gR"/>
                     </connections>
