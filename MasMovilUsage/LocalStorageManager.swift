@@ -72,6 +72,28 @@ class LocalStorageManager {
         defaults?.synchronize()
     }
     
+    func getConsume() -> [String:AnyObject]
+    {
+        let defaults = UserDefaults(suiteName: DEFAULTS_NAME)
+        
+        if let d = defaults?.dictionary(forKey: "consume") {
+            return d as [String : AnyObject]
+        }
+        else{
+            return [String : AnyObject]()
+        }
+    }
+    
+    func saveConsume(_ data:[String:AnyObject])
+    {
+        
+        let defaults = UserDefaults(suiteName: DEFAULTS_NAME)
+        
+        defaults?.setValue(data, forKey: "consume")
+        
+        defaults?.synchronize()
+    }
+    
     func saveUser(_ username:String, password:String, token:String)
     {
         

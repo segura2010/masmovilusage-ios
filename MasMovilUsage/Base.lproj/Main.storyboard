@@ -65,8 +65,22 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
                                         <color key="value" red="0.56651108266233619" green="0.57616086415766787" blue="0.58944917929292928" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="unitString" value="MB"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                        <color key="value" red="0.30199111570541104" green="0.74272199045137777" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                        <color key="value" red="0.71922323420000001" green="0.72399779040000001" blue="0.71749239050000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GhZ-KN-bH4">
+                                <frame key="frameInset" minX="339" minY="46" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -95,6 +109,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Resumen" image="first" selectedImage="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="GhZ-KN-bH4" id="9eJ-FR-RSA"/>
                         <outlet property="circularProgressBar" destination="eF3-2x-M0P" id="g9o-2p-nyU"/>
                         <outlet property="dataUsage" destination="clV-TI-eMG" id="AjM-iZ-axO"/>
                         <outlet property="totalUsage" destination="5tm-FJ-rbu" id="kDH-Rj-l3L"/>

@@ -23,6 +23,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
         
+        let consumeCache = LocalStorageManager.sharedInstance.getConsume()
+        if let data = consumeCache["data"]{
+            self.drawUsageInfo(consumeCache)
+        }
         
         self.indicatorView.hidesWhenStopped = true
         self.indicatorView.startAnimating()
@@ -56,6 +60,34 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
+    func drawUsageInfo(_ receivedData:[String:AnyObject]){
+        self.dataUsage.text = "\(receivedData["data"]!)"
+        self.voiceUsage.text = "\(receivedData["voice"]!)"
+        self.totalUsage.text = "\(receivedData["consume"]!)"
+        
+        let dataLimit = LocalStorageManager.sharedInstance.getDataLimit()
+        
+        let percent = (receivedData["data"] as! Float) / Float(dataLimit)
+        
+        self.dataBar.setProgress(percent, animated: true)
+        
+        if percent >= 0.85
+        {
+            self.dataUsage.textColor = UIColor.red
+            self.dataBar.progressTintColor = UIColor.red
+        }
+        else if percent >= 0.65
+        {
+            self.dataUsage.textColor = UIColor.orange
+            self.dataBar.progressTintColor = UIColor.orange
+        }
+        else if percent >= 0.5
+        {
+            self.dataUsage.textColor = UIColor.yellow
+            self.dataBar.progressTintColor = UIColor.yellow
+        }
+    }
+    
     func getAndDrawUsageInfo()
     {
         DispatchQueue.main.async(execute: { () -> Void in
@@ -85,34 +117,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
             if let receivedData = jsonResult?["data"] as? [String: AnyObject]
             {
+                LocalStorageManager.sharedInstance.saveConsume(receivedData)
                 
                 // Main UI Thread
                 DispatchQueue.main.async(execute: { () -> Void in
-                    self.dataUsage.text = "\(receivedData["data"]!)"
-                    self.voiceUsage.text = "\(receivedData["voice"]!)"
-                    self.totalUsage.text = "\(receivedData["consume"]!)"
-                    
-                    let dataLimit = LocalStorageManager.sharedInstance.getDataLimit()
-                    
-                    let percent = (receivedData["data"] as! Float) / Float(dataLimit)
-                    
-                    self.dataBar.setProgress(percent, animated: true)
-                    
-                    if percent >= 0.85
-                    {
-                        self.dataUsage.textColor = UIColor.red
-                        self.dataBar.progressTintColor = UIColor.red
-                    }
-                    else if percent >= 0.65
-                    {
-                        self.dataUsage.textColor = UIColor.orange
-                        self.dataBar.progressTintColor = UIColor.orange
-                    }
-                    else if percent >= 0.5
-                    {
-                        self.dataUsage.textColor = UIColor.yellow
-                        self.dataBar.progressTintColor = UIColor.yellow
-                    }
+                    self.drawUsageInfo(receivedData)
                     
                 })
             }

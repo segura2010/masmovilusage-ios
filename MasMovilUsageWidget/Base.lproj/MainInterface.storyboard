@@ -64,10 +64,10 @@
                                 <frame key="frameInset" minX="16" minY="99" width="92" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zBV-Le-0c4">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="zBV-Le-0c4">
                                 <frame key="frameInset" minX="276" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" red="1" green="0.83699162046444064" blue="0.078201856691564764" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="1" green="0.50022301729999996" blue="0.055986531159999998" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                     </view>
