@@ -14,10 +14,30 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>watchApp (Complication).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>watchApp (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>watchApp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>D30D31301D982BC3000F697E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D3289BEB1DB7EB8D004DC151</key>
 		<dict>
 			<key>primary</key>
 			<true/>

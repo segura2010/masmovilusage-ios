@@ -12,6 +12,17 @@
 		D30D313A1D982BC3000F697E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D30D31381D982BC3000F697E /* MainInterface.storyboard */; };
 		D30D313E1D982BC3000F697E /* MasMovilUsageWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D30D31311D982BC3000F697E /* MasMovilUsageWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D30D31441D982CEF000F697E /* MasMovilApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF81301D97E80600A43ACD /* MasMovilApi.swift */; };
+		D3289BF01DB7EB8D004DC151 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3289BEE1DB7EB8D004DC151 /* Interface.storyboard */; };
+		D3289BF21DB7EB8D004DC151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3289BF11DB7EB8D004DC151 /* Assets.xcassets */; };
+		D3289BF91DB7EB8D004DC151 /* watchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D3289BF81DB7EB8D004DC151 /* watchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D3289C001DB7EB8D004DC151 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3289BFF1DB7EB8D004DC151 /* InterfaceController.swift */; };
+		D3289C021DB7EB8D004DC151 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3289C011DB7EB8D004DC151 /* ExtensionDelegate.swift */; };
+		D3289C041DB7EB8D004DC151 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3289C031DB7EB8D004DC151 /* NotificationController.swift */; };
+		D3289C061DB7EB8D004DC151 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3289C051DB7EB8D004DC151 /* ComplicationController.swift */; };
+		D3289C081DB7EB8D004DC151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3289C071DB7EB8D004DC151 /* Assets.xcassets */; };
+		D3289C0C1DB7EB8D004DC151 /* watchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D3289BEC1DB7EB8D004DC151 /* watchApp.app */; };
+		D3289C151DB7EBD3004DC151 /* MasMovilApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF81301D97E80600A43ACD /* MasMovilApi.swift */; };
+		D3289C161DB7EBD7004DC151 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8D7AB1DAEBC5A0036DEC6 /* LocalStorageManager.swift */; };
 		D36865EF1DAEC4B60057B688 /* MBCircularProgressBarLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D36865EC1DAEC4B60057B688 /* MBCircularProgressBarLayer.m */; };
 		D36865F01DAEC4B60057B688 /* MBCircularProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D36865EE1DAEC4B60057B688 /* MBCircularProgressBarView.m */; };
 		D3AF811D1D97E74800A43ACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF811C1D97E74800A43ACD /* AppDelegate.swift */; };
@@ -33,6 +44,20 @@
 			remoteGlobalIDString = D30D31301D982BC3000F697E;
 			remoteInfo = MasMovilUsageWidget;
 		};
+		D3289BFA1DB7EB8D004DC151 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3AF81111D97E74800A43ACD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3289BF71DB7EB8D004DC151;
+			remoteInfo = "watchApp Extension";
+		};
+		D3289C0A1DB7EB8D004DC151 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3AF81111D97E74800A43ACD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3289BEB1DB7EB8D004DC151;
+			remoteInfo = watchApp;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +72,28 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3289C121DB7EB8D004DC151 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D3289BF91DB7EB8D004DC151 /* watchApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3289C141DB7EB8D004DC151 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D3289C0C1DB7EB8D004DC151 /* watchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +103,20 @@
 		D30D31391D982BC3000F697E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		D30D313B1D982BC3000F697E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D30D31431D982BD7000F697E /* MasMovilUsageWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MasMovilUsageWidget.entitlements; sourceTree = "<group>"; };
+		D3289BEC1DB7EB8D004DC151 /* watchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3289BEF1DB7EB8D004DC151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D3289BF11DB7EB8D004DC151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3289BF31DB7EB8D004DC151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3289BF81DB7EB8D004DC151 /* watchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3289BFE1DB7EB8D004DC151 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		D3289BFF1DB7EB8D004DC151 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		D3289C011DB7EB8D004DC151 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		D3289C031DB7EB8D004DC151 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		D3289C051DB7EB8D004DC151 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		D3289C071DB7EB8D004DC151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3289C091DB7EB8D004DC151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3289C171DB7F093004DC151 /* watchApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watchApp Extension.entitlements"; sourceTree = "<group>"; };
+		D3289C181DB7F1F8004DC151 /* watchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchApp.entitlements; sourceTree = "<group>"; };
 		D36865EB1DAEC4B60057B688 /* MBCircularProgressBarLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBCircularProgressBarLayer.h; path = libs/MBCircularProgressBarLayer.h; sourceTree = "<group>"; };
 		D36865EC1DAEC4B60057B688 /* MBCircularProgressBarLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBCircularProgressBarLayer.m; path = libs/MBCircularProgressBarLayer.m; sourceTree = "<group>"; };
 		D36865ED1DAEC4B60057B688 /* MBCircularProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBCircularProgressBarView.h; path = libs/MBCircularProgressBarView.h; sourceTree = "<group>"; };
@@ -79,6 +140,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D30D31341D982BC3000F697E /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3289BF51DB7EB8D004DC151 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +179,40 @@
 			path = MasMovilUsageWidget;
 			sourceTree = "<group>";
 		};
+		D3289BED1DB7EB8D004DC151 /* watchApp */ = {
+			isa = PBXGroup;
+			children = (
+				D3289C181DB7F1F8004DC151 /* watchApp.entitlements */,
+				D3289BEE1DB7EB8D004DC151 /* Interface.storyboard */,
+				D3289BF11DB7EB8D004DC151 /* Assets.xcassets */,
+				D3289BF31DB7EB8D004DC151 /* Info.plist */,
+			);
+			path = watchApp;
+			sourceTree = "<group>";
+		};
+		D3289BFC1DB7EB8D004DC151 /* watchApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D3289C171DB7F093004DC151 /* watchApp Extension.entitlements */,
+				D3289BFF1DB7EB8D004DC151 /* InterfaceController.swift */,
+				D3289C011DB7EB8D004DC151 /* ExtensionDelegate.swift */,
+				D3289C031DB7EB8D004DC151 /* NotificationController.swift */,
+				D3289C051DB7EB8D004DC151 /* ComplicationController.swift */,
+				D3289C071DB7EB8D004DC151 /* Assets.xcassets */,
+				D3289C091DB7EB8D004DC151 /* Info.plist */,
+				D3289BFD1DB7EB8D004DC151 /* Supporting Files */,
+			);
+			path = "watchApp Extension";
+			sourceTree = "<group>";
+		};
+		D3289BFD1DB7EB8D004DC151 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3289BFE1DB7EB8D004DC151 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D36865EA1DAEC4A40057B688 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +230,8 @@
 				D36865EA1DAEC4A40057B688 /* libs */,
 				D3AF811B1D97E74800A43ACD /* MasMovilUsage */,
 				D30D31351D982BC3000F697E /* MasMovilUsageWidget */,
+				D3289BED1DB7EB8D004DC151 /* watchApp */,
+				D3289BFC1DB7EB8D004DC151 /* watchApp Extension */,
 				D30D31321D982BC3000F697E /* Frameworks */,
 				D3AF811A1D97E74800A43ACD /* Products */,
 			);
@@ -138,6 +242,8 @@
 			children = (
 				D3AF81191D97E74800A43ACD /* MasMovilUsage.app */,
 				D30D31311D982BC3000F697E /* MasMovilUsageWidget.appex */,
+				D3289BEC1DB7EB8D004DC151 /* watchApp.app */,
+				D3289BF81DB7EB8D004DC151 /* watchApp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +285,40 @@
 			productReference = D30D31311D982BC3000F697E /* MasMovilUsageWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		D3289BEB1DB7EB8D004DC151 /* watchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3289C131DB7EB8D004DC151 /* Build configuration list for PBXNativeTarget "watchApp" */;
+			buildPhases = (
+				D3289BEA1DB7EB8D004DC151 /* Resources */,
+				D3289C121DB7EB8D004DC151 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3289BFB1DB7EB8D004DC151 /* PBXTargetDependency */,
+			);
+			name = watchApp;
+			productName = watchApp;
+			productReference = D3289BEC1DB7EB8D004DC151 /* watchApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		D3289BF71DB7EB8D004DC151 /* watchApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3289C111DB7EB8D004DC151 /* Build configuration list for PBXNativeTarget "watchApp Extension" */;
+			buildPhases = (
+				D3289BF41DB7EB8D004DC151 /* Sources */,
+				D3289BF51DB7EB8D004DC151 /* Frameworks */,
+				D3289BF61DB7EB8D004DC151 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "watchApp Extension";
+			productName = "watchApp Extension";
+			productReference = D3289BF81DB7EB8D004DC151 /* watchApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		D3AF81181D97E74800A43ACD /* MasMovilUsage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3AF812D1D97E74800A43ACD /* Build configuration list for PBXNativeTarget "MasMovilUsage" */;
@@ -187,11 +327,13 @@
 				D3AF81161D97E74800A43ACD /* Frameworks */,
 				D3AF81171D97E74800A43ACD /* Resources */,
 				D30D31421D982BC3000F697E /* Embed App Extensions */,
+				D3289C141DB7EB8D004DC151 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				D30D313D1D982BC3000F697E /* PBXTargetDependency */,
+				D3289C0B1DB7EB8D004DC151 /* PBXTargetDependency */,
 			);
 			name = MasMovilUsage;
 			productName = MasMovilUsage;
@@ -209,6 +351,26 @@
 				ORGANIZATIONNAME = Alberto;
 				TargetAttributes = {
 					D30D31301D982BC3000F697E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HG5KUP66BT;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					D3289BEB1DB7EB8D004DC151 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HG5KUP66BT;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					D3289BF71DB7EB8D004DC151 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = HG5KUP66BT;
 						ProvisioningStyle = Automatic;
@@ -246,6 +408,8 @@
 			targets = (
 				D3AF81181D97E74800A43ACD /* MasMovilUsage */,
 				D30D31301D982BC3000F697E /* MasMovilUsageWidget */,
+				D3289BEB1DB7EB8D004DC151 /* watchApp */,
+				D3289BF71DB7EB8D004DC151 /* watchApp Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -256,6 +420,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				D30D313A1D982BC3000F697E /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3289BEA1DB7EB8D004DC151 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3289BF21DB7EB8D004DC151 /* Assets.xcassets in Resources */,
+				D3289BF01DB7EB8D004DC151 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3289BF61DB7EB8D004DC151 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3289C081DB7EB8D004DC151 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +463,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3289BF41DB7EB8D004DC151 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3289C161DB7EBD7004DC151 /* LocalStorageManager.swift in Sources */,
+				D3289C151DB7EBD3004DC151 /* MasMovilApi.swift in Sources */,
+				D3289C041DB7EB8D004DC151 /* NotificationController.swift in Sources */,
+				D3289C061DB7EB8D004DC151 /* ComplicationController.swift in Sources */,
+				D3289C021DB7EB8D004DC151 /* ExtensionDelegate.swift in Sources */,
+				D3289C001DB7EB8D004DC151 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3AF81151D97E74800A43ACD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,6 +498,16 @@
 			target = D30D31301D982BC3000F697E /* MasMovilUsageWidget */;
 			targetProxy = D30D313C1D982BC3000F697E /* PBXContainerItemProxy */;
 		};
+		D3289BFB1DB7EB8D004DC151 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3289BF71DB7EB8D004DC151 /* watchApp Extension */;
+			targetProxy = D3289BFA1DB7EB8D004DC151 /* PBXContainerItemProxy */;
+		};
+		D3289C0B1DB7EB8D004DC151 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3289BEB1DB7EB8D004DC151 /* watchApp */;
+			targetProxy = D3289C0A1DB7EB8D004DC151 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -313,6 +517,14 @@
 				D30D31391D982BC3000F697E /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		D3289BEE1DB7EB8D004DC151 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3289BEF1DB7EB8D004DC151 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 		D3AF81221D97E74800A43ACD /* Main.storyboard */ = {
@@ -359,6 +571,80 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D3289C0D1DB7EB8D004DC151 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = watchApp/watchApp.entitlements;
+				DEVELOPMENT_TEAM = HG5KUP66BT;
+				IBSC_MODULE = watchApp_Extension;
+				INFOPLIST_FILE = watchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = segura.MasMovilUsage.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		D3289C0E1DB7EB8D004DC151 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = watchApp/watchApp.entitlements;
+				DEVELOPMENT_TEAM = HG5KUP66BT;
+				IBSC_MODULE = watchApp_Extension;
+				INFOPLIST_FILE = watchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = segura.MasMovilUsage.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		D3289C0F1DB7EB8D004DC151 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "watchApp Extension/watchApp Extension.entitlements";
+				DEVELOPMENT_TEAM = HG5KUP66BT;
+				INFOPLIST_FILE = "watchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = segura.MasMovilUsage.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		D3289C101DB7EB8D004DC151 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "watchApp Extension/watchApp Extension.entitlements";
+				DEVELOPMENT_TEAM = HG5KUP66BT;
+				INFOPLIST_FILE = "watchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = segura.MasMovilUsage.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
@@ -501,6 +787,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D3289C111DB7EB8D004DC151 /* Build configuration list for PBXNativeTarget "watchApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3289C0F1DB7EB8D004DC151 /* Debug */,
+				D3289C101DB7EB8D004DC151 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D3289C131DB7EB8D004DC151 /* Build configuration list for PBXNativeTarget "watchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3289C0D1DB7EB8D004DC151 /* Debug */,
+				D3289C0E1DB7EB8D004DC151 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		D3AF81141D97E74800A43ACD /* Build configuration list for PBXProject "MasMovilUsage" */ = {
 			isa = XCConfigurationList;
