@@ -193,7 +193,6 @@
 		D3289BFC1DB7EB8D004DC151 /* watchApp Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D3289C171DB7F093004DC151 /* watchApp Extension.entitlements */,
 				D3289BFF1DB7EB8D004DC151 /* InterfaceController.swift */,
 				D3289C011DB7EB8D004DC151 /* ExtensionDelegate.swift */,
 				D3289C031DB7EB8D004DC151 /* NotificationController.swift */,
@@ -208,6 +207,7 @@
 		D3289BFD1DB7EB8D004DC151 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D3289C171DB7F093004DC151 /* watchApp Extension.entitlements */,
 				D3289BFE1DB7EB8D004DC151 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
@@ -378,6 +378,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 0;
+							};
 						};
 					};
 					D3AF81181D97E74800A43ACD = {
@@ -388,6 +391,12 @@
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.WAC = {
+								enabled = 0;
 							};
 						};
 					};
@@ -795,6 +804,7 @@
 				D3289C101DB7EB8D004DC151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3289C131DB7EB8D004DC151 /* Build configuration list for PBXNativeTarget "watchApp" */ = {
 			isa = XCConfigurationList;
@@ -803,6 +813,7 @@
 				D3289C0E1DB7EB8D004DC151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3AF81141D97E74800A43ACD /* Build configuration list for PBXProject "MasMovilUsage" */ = {
 			isa = XCConfigurationList;

@@ -13,9 +13,13 @@
                         <label alignment="left" text="Data" id="K7y-eJ-BJP"/>
                         <label alignment="left" text="Voice" id="beS-Zs-Riv"/>
                         <label alignment="left" text="Total" id="KzE-KZ-eX0"/>
+                        <label alignment="left" text="Loading..." id="8W8-Lh-rfH">
+                            <color key="textColor" red="0.39573220792012809" green="1" blue="0.97308214007813221" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="dataUsage" destination="K7y-eJ-BJP" id="S5q-Wb-kDh"/>
+                        <outlet property="loadingLbl" destination="8W8-Lh-rfH" id="Lvy-K5-q4m"/>
                         <outlet property="totalUsage" destination="KzE-KZ-eX0" id="Jus-rg-gHb"/>
                         <outlet property="voiceUsage" destination="beS-Zs-Riv" id="jSa-O8-v4T"/>
                     </connections>

@@ -9,33 +9,37 @@
 import WatchKit
 import Foundation
 
+import WatchConnectivity
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var dataUsage: WKInterfaceLabel!
     @IBOutlet var voiceUsage: WKInterfaceLabel!
     @IBOutlet var totalUsage: WKInterfaceLabel!
-
+    @IBOutlet var loadingLbl: WKInterfaceLabel!
+    
+    // Communication Session
+    var sess = WCSession.default()
+    
+    // vars..
+    var dataLimit = 1000
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
-        let dataLimit = LocalStorageManager.sharedInstance.getDataLimit()
-        let token = LocalStorageManager.sharedInstance.getToken()
-        MasMovilApi.sharedInstance.validateToken(token, onCompletion: { (err, result) in
-            
-            if((err) != nil)
-            {
-                return;
-            }
-            
-            self.getAndDrawUsageInfo()
-            
-        })
+        sess.delegate = self
+        sess.activate()
+        
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        if sess.isReachable{
+            sess.sendMessage(["token":0], replyHandler: nil, errorHandler: nil)
+            sess.sendMessage(["datalimit":0], replyHandler: nil, errorHandler: nil)
+            loadingLbl.setHidden(false)
+        }
     }
     
     override func didDeactivate() {
@@ -46,36 +50,30 @@ class InterfaceController: WKInterfaceController {
     
     func drawUsageInfo(_ receivedData:[String:AnyObject])
     {
-        print("RECEIVED: \(receivedData["data"]!) MB")
-        self.dataUsage.setText("\(receivedData["data"]!) MB")
-        self.voiceUsage.setText("\(receivedData["voice"]!) Min.")
-        self.totalUsage.setText("\(receivedData["consume"]!) €")
+        loadingLbl.setHidden(true)
+        self.dataUsage.setText("Data: \(receivedData["data"]!) MB")
+        self.voiceUsage.setText("Voice: \(receivedData["voice"]!) Min.")
+        self.totalUsage.setText("Total: \(receivedData["consume"]!) €")
         
-        /*
-        let dataLimit = LocalStorageManager.sharedInstance.getDataLimit()
         let dataUsage = CGFloat(receivedData["data"] as! Float)
         
         let percent = (receivedData["data"] as! Float) / Float(dataLimit)
         
         if percent >= 0.85
         {
-            self.circularProgressBar.progressColor = UIColor.red
+            self.dataUsage.setTextColor(UIColor.red)
         }
         else if percent >= 0.65
         {
-            self.circularProgressBar.progressColor = UIColor.orange
+            self.dataUsage.setTextColor(UIColor.orange)
         }
         else if percent >= 0.5
         {
-            self.circularProgressBar.progressColor = UIColor.yellow
+            self.dataUsage.setTextColor(UIColor.yellow)
         }
         else{
-            self.circularProgressBar.progressColor = UIColor.cyan
+            self.dataUsage.setTextColor(UIColor.white)
         }
-        
-        self.circularProgressBar.maxValue = CGFloat(LocalStorageManager.sharedInstance.getDataLimit())
-        self.circularProgressBar.setValue(dataUsage, animateWithDuration: 1.0)
-         */
     }
     
     func drawUsageInfoError()
@@ -118,6 +116,36 @@ class InterfaceController: WKInterfaceController {
             }
             
         })
+    }
+    
+    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
+    @available(watchOS 2.2, *)
+    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+        if activationState == .activated{
+            loadingLbl.setHidden(false)
+            session.sendMessage(["token":0], replyHandler: nil, errorHandler: nil)
+            session.sendMessage(["datalimit":0], replyHandler: nil, errorHandler: nil)
+        }else{
+            print("Session not activated !!")
+            DispatchQueue.main.async(execute: { () -> Void in
+                self.drawUsageInfoError()
+            })
+        }
+        
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        
+        if let reference = message["data"] as? [String : Any] {
+            self.drawUsageInfo(reference as [String : AnyObject])
+        }else if let reference = message["datalimit"] as? Int {
+            self.dataLimit = reference
+        }else if let reference = message["error"] as? String {
+            print(reference)
+            self.drawUsageInfoError()
+        }
+        
     }
 
 }
