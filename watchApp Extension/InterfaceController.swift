@@ -29,22 +29,26 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         sess.delegate = self
         sess.activate()
         
+        addMenuItem(with: .resume, title: "Refresh", action: #selector(reloadData))
+        
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        
-        if sess.isReachable{
-            sess.sendMessage(["token":0], replyHandler: nil, errorHandler: nil)
-            sess.sendMessage(["datalimit":0], replyHandler: nil, errorHandler: nil)
-            loadingLbl.setHidden(false)
-        }
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    func reloadData(){
+        if sess.isReachable{
+            sess.sendMessage(["token":0], replyHandler: nil, errorHandler: nil)
+            sess.sendMessage(["datalimit":0], replyHandler: nil, errorHandler: nil)
+            loadingLbl.setHidden(false)
+        }
     }
     
     
