@@ -26,7 +26,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>segura.MasMovilUsage</string>
+	<string>MasMovilUsage</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

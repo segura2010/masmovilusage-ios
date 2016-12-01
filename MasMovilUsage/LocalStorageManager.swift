@@ -11,7 +11,7 @@ import Foundation
 class LocalStorageManager {
     static let sharedInstance = LocalStorageManager()
     
-    let DEFAULTS_NAME = "group.masmovilusage"
+    let DEFAULTS_NAME = "group.masmovilusage.segura"
     
     
     func getUsername() -> String

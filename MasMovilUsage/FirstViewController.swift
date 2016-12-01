@@ -13,10 +13,7 @@ class FirstViewController: UIViewController {
     @IBOutlet var dataUsage: UILabel!
     @IBOutlet var voiceUsage: UILabel!
     @IBOutlet var totalUsage: UILabel!
-    @IBOutlet var indicator: UIView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    
-    @IBOutlet var circularProgressBar: MBCircularProgressBarView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,25 +57,6 @@ class FirstViewController: UIViewController {
         let dataUsage = CGFloat(receivedData["data"] as! Float)
         
         let percent = (receivedData["data"] as! Float) / Float(dataLimit)
-        
-        if percent >= 0.85
-        {
-            self.circularProgressBar.progressColor = UIColor.red
-        }
-        else if percent >= 0.65
-        {
-            self.circularProgressBar.progressColor = UIColor.orange
-        }
-        else if percent >= 0.5
-        {
-            self.circularProgressBar.progressColor = UIColor.yellow
-        }
-        else{
-            self.circularProgressBar.progressColor = UIColor.cyan
-        }
-        
-        self.circularProgressBar.maxValue = CGFloat(LocalStorageManager.sharedInstance.getDataLimit())
-        self.circularProgressBar.setValue(dataUsage, animateWithDuration: 1.0)
     }
     
     func getAndDrawUsageInfo()
@@ -112,8 +90,6 @@ class FirstViewController: UIViewController {
     @IBAction func reloadBtnClick(_ sender: AnyObject) {
         
         activityIndicator.startAnimating()
-        
-        self.circularProgressBar.setValue(0.0, animateWithDuration: 1.0)
         
         self.getAndDrawUsageInfo()
         
