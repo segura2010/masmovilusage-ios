@@ -53,12 +53,37 @@ class SecondViewController: UIViewController {
                 return;
             }
             
+            self.updateDataLimit()
             if let token = result?["token"]{
                 LocalStorageManager.sharedInstance.saveUser(username, password: password, token:token as! String)
             }
             
         }
         
+    }
+    
+    func updateDataLimit(){
+        MasMovilApi.sharedInstance.getConsumeHome() { (err, result) in
+            if((err) != nil){
+                print("Error!")
+                return;
+            }
+            
+            if let data = result!["data"] as? [[String:AnyObject]]{
+                if let data0 = data[0] as? [String:AnyObject]{
+                    if let consume = data0["consume"] as? [String:AnyObject]{
+                        if let dataLimit = consume["data_qty"] as? Int{
+                            // print("limit: \(dataLimit)")
+                            
+                            // Main UI Thread
+                            DispatchQueue.main.async(execute: { () -> Void in
+                                self.dataTxt.text = "\(dataLimit)"
+                            })
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func saveDataBtnClick(_ sender: AnyObject) {

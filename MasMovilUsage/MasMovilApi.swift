@@ -131,14 +131,18 @@ class MasMovilApi {
             
             let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
                 do{
+                    print(error.debugDescription)
                     //print("Response: \(response)")
-                    let res = response as! HTTPURLResponse
-                    //print(res)
-                    
-                    if res.statusCode == 200 || res.statusCode == 302{
-                        onCompletion(nil, nil)
+                    if let res = response as? HTTPURLResponse{
+                        //print(res)
+                        
+                        if res.statusCode == 200 || res.statusCode == 302{
+                            onCompletion(nil, nil)
+                        }else{
+                            onCompletion(NSError(domain: "get", code: 999, userInfo: nil), nil)
+                        }
                     }else{
-                        onCompletion(NSError(domain: "get", code: 999, userInfo: nil), nil)
+                        onCompletion(nil, nil)
                     }
                 }catch{
                     print("Error:\n \(error)")
@@ -176,6 +180,12 @@ class MasMovilApi {
     func getConsumeDetails(_ startTimeStamp:String, endTimeStamp:String, onCompletion:@escaping ServiceResponse)
     {
         let url = "services/consume/details/\(startTimeStamp)/\(endTimeStamp)"
+        get(url, onCompletion: onCompletion)
+    }
+    
+    func getConsumeHome(onCompletion:@escaping ServiceResponse)
+    {
+        let url = "services/consumeHome/"
         get(url, onCompletion: onCompletion)
     }
     
